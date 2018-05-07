@@ -34,3 +34,40 @@ HTML框架：通过框架标签，可以在一个浏览器窗口中浏览多个�
 
 HTML背景：可以在<body>标签中设置背景颜色或背景图片
 ***在使用背景图片时要注意：1.格式：jpg/gif 2.如果图像小于页面，则图片会在整个浏览器窗口进行复制 3.图像文件要小于10K
+
+HTML头部：
+<title>：页面标题
+<base>：为页面上的所有链接规定默认地址或默认目标（target）
+<link>：常用于连接样式表
+<style>：定义样式信息
+<meta>:提供关于 HTML 文档的元数据,元数据可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。
+       典型的情况是，meta 元素被用于规定页面的描述、关键词、文档的作者、最后修改时间以及其他元数据
+<script>：定义客户端脚本JS
+
+<!DOCTYPE> 不是 HTML 标签。它为浏览器提供一项信息（声明），即 HTML 是用什么版本编写的。
+不同版本的HTML写法也不同，最新的HTML5格式：<!DOCTYPE html>
+
+HTML表单：用于搜集不同类型的用户输入
+<form>
+  <filedset>  <!-- 组合表单中的相关数据 -->
+  <legend> ABC </legend>  <!-- 为<filedset>元素定义标题 -->
+    <input type="text">   <!-- 表单本身并不可见。还要注意文本字段的默认宽度是 20 个字符 -->
+    <input type="radio">  <!-- 单选 -->
+    <input type="submit"> <!-- 提交 -->
+    <input type="password"> <!-- 密码 -->
+    <input type="checkbox"> <!-- 复选框 --> <!-- HTML5增加了多个新的输入类型 -->
+    <select name="cars">  <!--下拉列表 -->
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat" >Fiat</option>
+      <option value="audi" selected>Audi</option>  <!-- selected可以预定义选型，要是没有这个属性，默认第一项为被选选项 -->
+    </select>
+    <textarea name="message" rows="10" cols="30">  <!-- 定义多行输入文字 -->
+      The cat was playing in the garden.
+    </textarea>
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button>  <!-- 定义可点击的按钮 -->
+  </filedset>
+</form>
+***要正确提交表单，每个输入字段必须设置一个name属性
+
+输入限制：使用属性来限制用户输入
