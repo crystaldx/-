@@ -1,0 +1,36 @@
+继续学习HTML的内容
+
+1.<div>：组合html内元素的容器 用于页面布局 块元素
+2.<span>：组合文本的容器 内联元素
+
+html中设置类：对元素的类定义CSS样式
+class 在CSS样式表中以“.class名”表示
+
+在页面布局中 传统使用的是<div>来进行布局，但是在html5中对页面布局元素有了新定义
+<header>
+<nav>
+<selction>
+<article>
+<footer>
+<aside>
+<details>
+<summary>
+
+响应式页面布局
+可以自己创建 或使用CSS框架BootStrap
+
+HTML框架：通过框架标签，可以在一个浏览器窗口中浏览多个页面
+框架结构：<frameset>
+<frame>标签定义了每个框架中的html文档
+<frameset cols 或 rows =" , ...">
+  <frame src="">
+  <frame scr="">
+  .......
+</frameset>
+****<frameset>和<body>不能一起使用
+
+内联框架<iframe>：用于在页面内显示页面
+<iframe src=""></iframe>
+
+HTML背景：可以在<body>标签中设置背景颜色或背景图片
+***在使用背景图片时要注意：1.格式：jpg/gif 2.如果图像小于页面，则图片会在整个浏览器窗口进行复制 3.图像文件要小于10K
