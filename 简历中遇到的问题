@@ -36,3 +36,12 @@ document.getElementById('file_face').onchange = function() {
 3.输入默认格式的问题
 border:none;-----去除input自带的黑色边框
 outline:none;-----去除聚焦时的蓝色边框
+
+4.图片和文字水平对齐
+1) 图片没使用float（文字为行内元素）：图片元素需加上vertical-align:middle（此语句对float元素无效），
+   然后通过使用margin-top（不加上先前语句使用此语句会使图片文字一块移动）进一步调整图片位置即可。
+   貌似加不加display:inline-block没区别啊。
+ps:若将vertical-align:middle加在文字元素上，改变margin-top文字和图片仍会一块移动。
+
+2) 图片使用了float（文字为块级元素）：图片元素直接margin-top调整即可。
+另外：vertical-align不是与文字相关的属性，不能继承，必须写在要调整位置的元素里；line-height,text-align等可以继承。
