@@ -32,3 +32,7 @@ document.getElementById('file_face').onchange = function() {
 	display: block;
 	margin: auto;
 }
+
+3.输入默认格式的问题
+border:none;-----去除input自带的黑色边框
+outline:none;-----去除聚焦时的蓝色边框
