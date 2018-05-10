@@ -1,0 +1,2 @@
+CSS背景
+1.当文档向下滚动时，背景不动： background-attachment:fixed; 这个属性默认值是scroll，也就是说在默认情况下，背景是随文档滚动的
