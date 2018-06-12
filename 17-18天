@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn" onclick="myTrans()">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+
+		function dec2bin(decNumber) {
+		    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+		    var y=document.getElementById('bin-bit').value;
+		 	var myBit=parseInt(y);
+		    var remainder=new Array();
+		    //先把传递进来的用户输入的数值赋给另一个变量
+		    var num=decNumber;  
+
+		    //数值转化成二进制
+		    for(var i=0; 1; i++) {
+		    	var quotient=Math.floor(num/2);
+		    	if (quotient>=1) {
+		    		remainder[i]=num%2;
+		    		num=quotient;
+		    	}
+		    	else {
+		    		remainder[i]=1;
+		    		break;
+		    	}
+		    }
+
+		    //比较用户定义的位数和原本转化成的二进制位数
+		    if (myBit>=remainder.length) {
+		    	remainder=[];
+
+		    	for(var i=0; i<myBit; i++) {
+			    	var quotient=Math.floor(decNumber/2);
+			    	if (quotient>=1) {
+			    		remainder[i]=decNumber%2;
+			    		decNumber=quotient;
+			    	}
+			    	else {
+			    		remainder[i]=1;
+			    		//这么写肯定不是很好
+			    		decNumber=10000000; 
+			    	}
+		    	}
+		    	document.getElementById('result').innerHTML=remainder.reverse();
+		    	//这里不知道为什么如果用return remainder是返回不了这个数组的
+		    }
+		    else {
+		    	document.getElementById('result').innerHTML=remainder.reverse();
+		    	console.log("用户定义的位数小于数字二进制的位数");
+		    }
+		    //var trans_number=remainder.reverse();
+		    //return trans_number
+		    
+		}
+
+		// 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+		// Some coding
+		function myTrans() {
+		 	var x=document.getElementById('dec-number').value;
+		 	var myNumber=parseInt(x);
+		 	
+
+		 	if (myNumber>=0) {
+		 		dec2bin(myNumber);
+		 		//document.getElementById('result').innerHTML=trans_number;
+		 	}
+		 	else {
+		 		document.getElementById('result').innerHTML="请输入非负的十进制整数";
+		 	}
+		 }
+
+		// 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+		// 新的需求是，转化显示后的二进制数为bin-bit中输入的数字宽度，例如
+		// dec-number为5，bin-bit为5，则转化后数字为00101
+		// 如果bin-bit小于转化后的二进制本身位数，则使用原本的位数，如dec-number为5，bin-bit为2，依然输出101，但同时在console中报个错
+		// Some coding
+
+
+    </script>
+</body>
+</html>
