@@ -1,0 +1,2 @@
+1.document.getElementById、document.getElementsByTagName、document.getElementsByClassName
+  这三种方法得到的都是对象。后两种是数组对象，所以要访问的话，形式为[i]。
