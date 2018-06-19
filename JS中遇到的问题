@@ -7,3 +7,50 @@
 3.target事件属性
   可以返回触发事件的节点 
   语法：event.target
+  详细的见下面这段代码
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+        .palette {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .palette li {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>            
+    <ul class="palette">
+        <li style="background-color:crimson"></li>
+        <li style="background-color:bisque"></li>
+        <li style="background-color:blueviolet"></li>
+        <li style="background-color:cyan"></li>
+        <li style="background-color:#194738"></li>        
+    </ul>
+    <p class="color-picker"></p>
+
+    <script>
+        var list = document.querySelectorAll("li");
+        for (var i = 0, len = list.length; i < len; i++) {
+
+            list[i].onclick = function(a) {
+                //***这里必须要使用target事件属性，如果直接使用list[i].style.backgroundColor
+                //   是不行的 但是为什么不行 现在还不清楚
+                var t = a.target;
+                var c = t.style.backgroundColor;
+                var p = document.getElementsByClassName("color-picker")[0]
+                p.innerHTML = c;
+                p.style.backgroundColor = c;
+            }
+        }      
+    </script>
+</body>
+</html>
