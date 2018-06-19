@@ -1,3 +1,5 @@
 1.首先是JS代码所放的位置
   如果JS代码中用到的HTML在代码后面的位置，那么不会执行，因为是按照位置顺序执行的
   这时可以把JS代码放到最后，如果是外部引用代码，可以设置异步脚本或是延迟脚本。
+  
+2.设置元素的disabled属性后，可以使用document.getElementById().disabled=false来移除
