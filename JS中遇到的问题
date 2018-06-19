@@ -3,3 +3,7 @@
   这时可以把JS代码放到最后，如果是外部引用代码，可以设置异步脚本或是延迟脚本。
   
 2.设置元素的disabled属性后，可以使用document.getElementById().disabled=false来移除
+
+3.target事件属性
+  可以返回触发事件的节点 
+  语法：event.target
