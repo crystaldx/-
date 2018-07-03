@@ -1,0 +1,24 @@
+1.JS内置对象
+
+2.自定义对象
+
+  两种方法：
+  
+  1）定义并创建对象的实例（创建直接的实例）
+    person=new Object();
+    person.firstname="Bill";
+    person.lastname="Gates";
+    person.age=56;
+    person.eyecolor="blue";
+    
+  2）使用函数来定义对象，然后创建新的对象实例（使用对象构造器）
+    function person(firstname,lastname,age,eyecolor)
+    {
+    this.firstname=firstname;
+    this.lastname=lastname;
+    this.age=age;
+    this.eyecolor=eyecolor;
+    }
+    
+    var myFather=new person("Bill","Gates",56,"blue");
+    var myMother=new person("Steve","Jobs",48,"green");
