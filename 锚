@@ -1,0 +1,32 @@
+一、html页面内可以设置锚点，语法如下：
+<a name='myanchor'></a>
+
+二、如何使用锚点呢？
+<a href='#myanchor'>点击我跳至设置的锚点</a>   
+这里注意：#后面可以跟锚点name的名称，也可以用id。
+
+三、在JS中如何使用锚点跳至指定的页面位置呢？
+这里提供两种方法：
+1.location.href='#myanchor';
+     function onTopClick() {  
+        location.href = "#top";   
+    }  
+    function onBottomClick() {  
+        location.href = "#bottom";   
+    }  
+    
+2.window.location.hash='#myanchor';
+    function onTopClick() {  
+        window.location.hash = "#top";   
+    }  
+    function onBottomClick() {  
+        window.location.hash = "#bottom";   
+    }
+    
+这两种方法在HTML中<input id="btnBottom" type="button" onclick="javascript:onBottomClick()" value="跳转到底部"/>
+   
+四、这样使用锚点都是直接跳至指定的位置，怎样实现滑动至指定位置呢？
+
+
+
+
