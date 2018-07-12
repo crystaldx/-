@@ -27,7 +27,22 @@
 这两种方法在HTML中<input id="btnBottom" type="button" onclick="javascript:onBottomClick()" value="跳转到底部"/>
    
 四、这样使用锚点都是直接跳至指定的位置，怎样实现滑动至指定位置呢？
+原生JS可以使用scrollTo（x,y）;但是这种方法在谷歌上实验了 还是直接跳转过去了，没有实现平滑跳转
 
+再就是使用Jquery啦，代码如下
+$('html, body').animate({scrollTop:$('#elementid').offset().top}, 1000);  --scrollTop:0;这样设置的话，就是滑动到页面顶端
+其中：
+$("html,body")代表对html或body元素进行动画，即要改变他们的css属性值
+animate()方法：执行 CSS 属性集的自定义动画。
+$(selector).animate(styles,speed,easing,callback)
+styles: 必需。规定产生动画效果的 CSS 样式和值。
+speed: 可选。规定动画的速度。默认是 "normal"。
+easing: 可选。规定在不同的动画点中设置动画速度的 easing 函数。
+callback: 可选。animate 函数执行完之后，要执行的函数。
+
+scrollTop是要改变的属性值，表示滚动条滑过的距离，在这里表示向下拉动浏览器滚动条后html（body)被浏览器顶端隐藏的高度
+$("#elementid").offset().top就是html（body)需要被浏览器顶端隐藏的高度，它代表id为elementid的元素顶端到网页顶端（不是浏览器可视区域顶端）的绝对距离
+，也就是说会滑动到id为elementid的元素的顶端。
 
 
 
