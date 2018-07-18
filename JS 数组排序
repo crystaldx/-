@@ -1,0 +1,42 @@
+一、sort()方法：
+这个方法会调用每个数组项的toString()方法，然后比较得到的字符串，以确定如何排序
+sort()方法可以接收一个比较函数（排序函数）作为参数，以便我们指定哪个值位于哪个值前面
+arr.sort(compare);
+function compare(value1, value2) {
+}
+排序函数规则：
+1.传入两个形参
+2.当返回值为正数时，交换两个参数的位置
+
+按数值大小进行排序--升序
+function compare(value1, value2) {
+  return value1 - value2;
+}
+
+按数值大小进行排序--升序
+function compare(value1, value2) {
+  return value2 - value1;
+}
+
+按数组中对象的某一个属性进行排序
+var arr = [
+    {name:'zopp',age:0},
+    {name:'gpp',age:18},
+    {name:'yjj',age:8}
+];
+function compare(property){
+    return function(a,b){
+        var value1 = a[property];
+        var value2 = b[property];
+        return value1 - value2;
+    }
+}
+console.log(arr.sort(compare('age')))
+
+按数组乱序
+function compare(value1, value2) {
+  return Math.random()-0.5;
+}
+
+
+二、reverse()方法：这个方法会反转数组项的顺序
